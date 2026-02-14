@@ -987,3 +987,25 @@ p{margin:0; color:var(--muted);}
   margin: 2px 0;
   line-height: 1.4;
 }
+
+/* Scrollbar width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Thumb */
+::-webkit-scrollbar-thumb {
+  background: rgba(11, 28, 45, 0.7);
+}
+
+
+/* Thumb on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #f4a000;   /* gold */
+}
+
