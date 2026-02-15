@@ -163,8 +163,8 @@ p{margin:0; color:var(--muted);}
 }
 
 .hero__split{
-  display:grid;
-  grid-template-columns: 1fr 1fr;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);  /* 3 panels in one row */
   min-height: calc(100vh - 72px);
 }
 
@@ -186,6 +186,11 @@ p{margin:0; color:var(--muted);}
   background:
     linear-gradient(0deg, rgba(30,42,68,.55), rgba(30,42,68,.55)),
     url("../images/hero-elevator.jpg") center/cover no-repeat;
+}
+.hero__panel--construction{
+  background:
+    linear-gradient(0deg, rgba(30,42,68,.55), rgba(30,42,68,.55)),
+    url("../images/hero-construction.jpg") center/cover no-repeat;
 }
 
 .hero__overlay{
@@ -391,10 +396,10 @@ p{margin:0; color:var(--muted);}
   line-height: 1.7;
 }
 
-.solutions__grid{
-  display:grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
+.solutions__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 in one row */
+  gap: 30px;
 }
 
 .solutions__card{
@@ -404,6 +409,10 @@ p{margin:0; color:var(--muted);}
   padding: 22px;
   box-shadow: 0 12px 28px rgba(0,0,0,.05);
   transition: transform .2s ease, box-shadow .2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 
 .solutions__card:hover{
@@ -453,6 +462,19 @@ p{margin:0; color:var(--muted);}
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 1024px){
+  .solutions__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px){
+  .solutions__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 /* Projects section */
 
