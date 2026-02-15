@@ -1009,3 +1009,104 @@ p{margin:0; color:var(--muted);}
   background: #f4a000;   /* gold */
 }
 
+/* ===== FOOTER ===== */
+footer {
+  background-color: #1f2d3d;   /* Navy Blue */
+  padding: 60px 8%;
+  color: #ffffff;
+}
+
+/* Footer Layout */
+.footer__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+}
+
+/* Footer Column */
+.footer__col h4 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  position: relative;
+  color: #ffffff;
+}
+
+/* Gold underline under heading */
+.footer__col h4::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 40px;
+  height: 3px;
+  background-color: #f4a000;  /* Gold */
+}
+
+/* Footer Links */
+.footer__col a {
+  display: block;
+  margin-bottom: 12px;
+  text-decoration: none;
+  color: #cbd5e1;   /* Soft white */
+  font-weight: 400;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+/* Hover Effect */
+.footer__col a:hover {
+  color: #f4a000;   /* Gold on hover */
+  transform: translateX(5px);
+}
+
+/* Optional bottom copyright */
+.footer__bottom {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  font-size: 14px;
+  color: #94a3b8;
+}
+
+.footer__desc {
+  font-weight: 400;   /* normal weight */
+  color: #cbd5e1;     /* soft white for readability */
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+/* Footer social icons */
+.footer__social{
+  display:flex;
+  gap:12px;
+  margin-top: 14px;
+}
+
+.footer__social a{
+  width:44px;
+  height:44px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:0;                 /* override footer link spacing */
+  text-decoration:none;
+  border-radius:12px;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.06);
+  color:#cbd5e1;
+  transition: transform .2s ease, background .2s ease, color .2s ease, border-color .2s ease;
+}
+
+/* remove the link hover translateX effect for icons */
+.footer__social a:hover{
+  transform: translateY(-2px);
+  background: #f4a000;
+  color:#111;
+  border-color: #f4a000;
+}
+
+.footer__social i{
+  font-size:18px;
+}
