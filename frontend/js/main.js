@@ -33,12 +33,44 @@ const contactForm = document.getElementById("contact-form");
 const statusEl = document.getElementById("contact-status");
 
 if (contactForm) {
-  contactForm.addEventListener("submit", (e) => {
+  contactForm.addEventListener("submit", async (e) => {
     e.preventDefault();
-    statusEl.textContent = "Thanks! We received your message. We’ll contact you soon.";
-    contactForm.reset();
+
+    statusEl.textContent = "Sending...";
+
+    const payload = {
+      name: document.getElementById("name")?.value?.trim() || "",
+      email: document.getElementById("email")?.value?.trim() || "",
+      phone: document.getElementById("phone")?.value?.trim() || "",
+      message: document.getElementById("message")?.value?.trim() || "",
+      company: document.getElementById("company")?.value?.trim() || "" // honeypot
+    };
+
+    try {
+      const res = await fetch("http://127.0.0.1:8000/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      });
+
+      // If backend returns non-200, still try to read json; else show error
+      let result = null;
+      try {
+        result = await res.json();
+      } catch (_) {}
+
+      if (res.ok && result?.ok) {
+        statusEl.textContent = "Message sent successfully!";
+        contactForm.reset();
+      } else {
+        statusEl.textContent = result?.detail || "Failed to send. Please try again.";
+      }
+    } catch (err) {
+      statusEl.textContent = "Server not reachable. Is the backend running?";
+    }
   });
 }
+
 
 // Projects modal (Grid + Modal)
 // ===== Projects Modal With Arrows =====
