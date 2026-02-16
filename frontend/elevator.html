@@ -3,29 +3,260 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Elevator Solutions | Harlin GlazTec</title>
+  <title>Interior Solutions | Harlin GlazTec</title>
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-  <header class="header">
+  <!-- Top utility bar -->
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <div class="topbar__left">
+        <span><i class="fas fa-phone"></i> +91 9880111219 | +91 9980833695</span>
+        <span><i class="fas fa-envelope"></i> harlinglaztec@gmail.com | ceo@harlinglaztec.com</span>
+      </div>
+      <div class="topbar__right">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header" id="header">
     <div class="container header__inner">
-      <a class="logo" href="index.html">Harlin<span>GlazTec</span></a>
-      <nav class="nav">
-        <a href="index.html#about">About</a>
-        <a href="index.html#projects">Projects</a>
-        <a href="index.html#contact">Contact</a>
+      <a href="index.html" class="logo">
+        <img src="images/logo.png" alt="Harlin GlazTec Logo">
+      </a>
+
+
+      <nav class="nav" id="nav">
+        <a href="index.html#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#services">Our Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact Us</a>
       </nav>
-      <a class="btn btn--primary" href="index.html#contact">Request a Quote</a>
+
+      <div class="header__actions">
+        <button class="icon-btn" id="infoBtn" aria-label="Company info"><i class="fas fa-info-circle"></i></button>
+        <a class="btn btn--primary" href="#contact">Request a Quote</a>
+      </div>
     </div>
   </header>
 
-  <main class="section">
-    <div class="container">
-      <h1>Elevator Solutions</h1>
-      <p>Next step: elevator types + elevator projects + CTA.</p>
+    <!-- Right side info panel (like your screenshot) -->
+  <aside class="sidepanel" id="sidepanel" aria-hidden="true">
+    <button class="sidepanel__close" id="closePanel" aria-label="Close">✕</button>
+
+    <div class="sidepanel__block">
+      <div class="sidepanel__icon"><i class="fas fa-phone"></i></div>
+      <h3>Phone Number</h3>
+      <p>+91 9880111219</p>
+      <p>+91 9980833695</p>
     </div>
-  </main>
+
+    <div class="divider"></div>
+
+    <div class="sidepanel__block">
+      <div class="sidepanel__icon"><i class="fas fa-envelope"></i></div>
+      <h3>Email Address</h3>
+      <p>harlinglaztec@gmail.com</p>
+      <p>ceo@harlinglaztec.com</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="sidepanel__block">
+      <div class="sidepanel__icon"><i class="fas fa-map-marker-alt"></i></div>
+      <h3>Office Address</h3>
+      <p>No. 613, 5th Main, OMBR Layout, Kasturi Nagar, Bangalore – 560043</p>
+    </div>
+
+    <div class="divider"></div>
+    
+    <div class="sidepanel__social">
+      <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+      <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+  </aside>
+
+  <!-- Overlay behind sidepanel -->
+  <div class="overlay" id="overlay" hidden></div>
+
+  <!-- Main -->
+  <main id="home">
+
+  <section id="about" class="section about">
+  <div class="container">
+
+    <div class="section-title">
+      <span class="section-title__bar"></span>
+      <h2>About Us</h2>
+    </div>
+
+  </div>
+</section>
+
+<section class="section services" id="services">
+  <div class="container">
+    <div class="section-title">
+      <span class="section-title__bar"></span>
+      <h2>Our Services</h2>
+    </div>
+  </div>
+</section>
+
+
+<section id="projects" class="section projects">
+  <div class="container">
+
+    <div class="section-title">
+      <span class="section-title__bar"></span>
+      <h2>Our Projects</h2>
+    </div>
+
+    <p class="projects__subtitle">
+      A glimpse of our completed work across elevator installation and interior execution.
+    </p>
+
+    <div class="projects__grid">
+      <!-- Project 1 -->
+      <a href="images/project-1.jpg" class="project-card"
+         data-title="Luxury Villa"
+         data-meta="Construction • Interior"
+         data-desc="High-end residential execution with premium interior finishing, careful detailing, and on-time delivery."
+         data-img="images/project-1.jpg">
+        <img src="images/project-1.jpg" alt="Luxury Villa">
+        <div class="project-card__overlay">
+          <div class="project-card__info">
+            <h3>Luxury Villa</h3>
+            <p>Construction • Interior</p>
+          </div>
+          <span class="project-card__plus">+</span>
+        </div>
+      </a>
+
+      <!-- Project 2 -->
+      <a href="images/project-2.jpg" class="project-card"
+         data-title="Passenger Elevator Installation"
+         data-meta="Elevator • Installation"
+         data-desc="Installation and commissioning with safety-first workflow, testing, and post-installation support."
+         data-img="images/project-2.jpg">
+        <img src="images/project-2.jpg" alt="Passenger Elevator Installation">
+        <div class="project-card__overlay">
+          <div class="project-card__info">
+            <h3>Passenger Elevator Installation</h3>
+            <p>Elevator • Installation</p>
+          </div>
+          <span class="project-card__plus">+</span>
+        </div>
+      </a>
+
+      <!-- Project 3 -->
+      <a href="images/project-3.webp" class="project-card"
+         data-title="Corporate Office Interiors"
+         data-meta="Interior • Fit-out"
+         data-desc="Workspace interiors with partitions, lighting, and durable finishes designed for productivity."
+         data-img="images/project-3.webp">
+        <img src="images/project-3.webp" alt="Corporate Office Interiors">
+        <div class="project-card__overlay">
+          <div class="project-card__info">
+            <h3>Corporate Office Interiors</h3>
+            <p>Interior • Fit-out</p>
+          </div>
+          <span class="project-card__plus">+</span>
+        </div>
+      </a>
+
+      <!-- Project 4 -->
+      <a href="images/project-4.webp" class="project-card"
+         data-title="Glass Elevator Project"
+         data-meta="Elevator • Glass"
+         data-desc="Premium glass elevator installation with clean finishing and reliable performance testing."
+         data-img="images/project-4.webp">
+        <img src="images/project-4.webp" alt="Glass Elevator Project">
+        <div class="project-card__overlay">
+          <div class="project-card__info">
+            <h3>Glass Elevator Project</h3>
+            <p>Elevator • Glass</p>
+          </div>
+          <span class="project-card__plus">+</span>
+        </div>
+      </a>
+
+      <!-- Project 5 -->
+      <a href="images/project-5.jpg" class="project-card"
+         data-title="Lobby & Common Areas"
+         data-meta="Interior • Lobby"
+         data-desc="Lobby execution with modern lighting accents, durable materials, and a clean layout finish."
+         data-img="images/project-5.jpg">
+        <img src="images/project-5.jpg" alt="Lobby and Common Areas">
+        <div class="project-card__overlay">
+          <div class="project-card__info">
+            <h3>Lobby & Common Areas</h3>
+            <p>Interior • Lobby</p>
+          </div>
+          <span class="project-card__plus">+</span>
+        </div>
+      </a>
+
+      <!-- Project 6 -->
+      <a href="images/project-6.jpg" class="project-card"
+         data-title="Elevator Modernization"
+         data-meta="Elevator • Modernization"
+         data-desc="Upgrading existing elevators for improved safety, performance, and smoother operations."
+         data-img="images/project-6.jpg">
+        <img src="images/project-6.jpg" alt="Elevator Modernization">
+        <div class="project-card__overlay">
+          <div class="project-card__info">
+            <h3>Elevator Modernization</h3>
+            <p>Elevator • Modernization</p>
+          </div>
+          <span class="project-card__plus">+</span>
+        </div>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- Project Modal -->
+<div class="pmodal" id="pmodal" hidden>
+  <div class="pmodal__dialog" role="dialog" aria-modal="true">
+
+    <button class="pmodal__close" id="pmodalClose">✕</button>
+
+    <!-- Left Arrow -->
+    <button class="pmodal__arrow pmodal__arrow--left" id="pmodalPrev">
+      &#10094;
+    </button>
+
+    <!-- Right Arrow -->
+    <button class="pmodal__arrow pmodal__arrow--right" id="pmodalNext">
+      &#10095;
+    </button>
+
+    <div class="pmodal__grid">
+      <div class="pmodal__left">
+        <img id="pmodalImg" src="" alt="">
+      </div>
+
+      <div class="pmodal__right">
+        <h3 id="pmodalTitle"></h3>
+        <p class="pmodal__meta" id="pmodalMeta"></p>
+        <p id="pmodalDesc"></p>
+
+        </a>
+      </div>
+    </div>
+
+  </div>
+</div>
 
   <section id="contact" class="section contact">
   <div class="container">
