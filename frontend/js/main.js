@@ -36,7 +36,21 @@ if (contactForm) {
   contactForm.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    statusEl.textContent = "Sending...";
+    // find the submit button safely (works even if type="submit" is missing)
+    const submitBtn =
+      contactForm.querySelector('[type="submit"]') ||
+      contactForm.querySelector("button");
+
+    // prevent double submit
+    if (submitBtn && submitBtn.disabled) return;
+
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.style.opacity = "0.7";
+      submitBtn.style.cursor = "not-allowed";
+    }
+
+    if (statusEl) statusEl.textContent = "Sending...";
 
     const payload = {
       name: document.getElementById("name")?.value?.trim() || "",
@@ -53,20 +67,22 @@ if (contactForm) {
         body: JSON.stringify(payload)
       });
 
-      // If backend returns non-200, still try to read json; else show error
-      let result = null;
-      try {
-        result = await res.json();
-      } catch (_) {}
+      const data = await res.json().catch(() => null);
 
-      if (res.ok && result?.ok) {
-        statusEl.textContent = "Message sent successfully!";
+      if (res.ok && data?.ok) {
+        if (statusEl) statusEl.textContent = data.message || "Message sent successfully!";
         contactForm.reset();
       } else {
-        statusEl.textContent = result?.detail || "Failed to send. Please try again.";
+        if (statusEl) statusEl.textContent = data?.detail || "Failed to send. Please try again.";
       }
     } catch (err) {
-      statusEl.textContent = "Server not reachable. Is the backend running?";
+      if (statusEl) statusEl.textContent = "Server not reachable. Is the backend running?";
+    } finally {
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.style.opacity = "1";
+        submitBtn.style.cursor = "pointer";
+      }
     }
   });
 }
